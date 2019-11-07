@@ -1,0 +1,86 @@
+\ProvidesPackage{presentation}
+
+\usetheme[sectionpage=simple,progressbar=frametitle]{metropolis}
+% sectionpage: frame before each section (none, simple, progressbar)
+% progressbar: position of the progress bar (none, head, frametitle, foot)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACKAGES
+
+\usepackage{appendixnumberbeamer} % reset frame numbering to 0 in the appendix
+
+\usepackage{comment} % cf. comment multiple lines
+
+\usepackage{booktabs} % cf. better tables
+
+\usepackage{graphicx} % cf. images
+%\graphicspath{{./img/}} % Images path
+
+\usepackage{xspace} % Define commands that appear not to eat spaces
+
+\usepackage{amsmath,amsfonts,amssymb} % cf. maths
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CUSTOMISATION
+
+\definecolor{vermillon}{RGB}{213, 94, 0}
+% Theme terra (by GlueStudio, https://www.colourlovers.com/palette/292482/Terra)
+\definecolor{terra1}{RGB}{3,22,52} % abyss (dark navy)
+\definecolor{terra2}{RGB}{3,54,73} % deep water (navy)
+\definecolor{terra3}{RGB}{3,101,100} % water (blue-green)
+\definecolor{terra4}{RGB}{205,179,128} % terra (yellow-brown)
+\definecolor{terra5}{RGB}{232,221,203} % terra terra (sand)
+
+% Change colour of the theme
+% ("progress bar", "frametitle, "background canvas", "normal text","title separator")
+% fg=foreground, bg=background
+\setbeamercolor{progress bar}{fg=terra4,bg=terra5}
+\setbeamercolor{frametitle}{bg=terra2}
+\setbeamercolor{normal text}{fg=terra1}
+\setbeamercolor{alerted text}{fg=vermillon}
+\setbeamercolor{example text}{fg=terra3}
+% Set background to white
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{block title}{bg=white}
+
+% Height of the footline
+\setbeamerfont{footline}{size=\fontsize{6}{12}\selectfont}
+
+% Footer (TOC and frame numbering)
+\setbeamertemplate{footline}{
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.95\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.05\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+    \insertframenumber{}/\inserttotalframenumber{}
+    \end{beamercolorbox}
+  }
+}
+
+% Change width of the progress bar (cf. *pt)
+\makeatletter
+\setbeamertemplate{progress bar in head/foot}{
+  \nointerlineskip
+  \setlength{\metropolis@progressinheadfoot}{%
+    \paperwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}%
+  }%
+  \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
+    \begin{tikzpicture}
+      \draw[bg, fill=bg] (0,0) rectangle (\paperwidth, 5pt);
+      \draw[fg, fill=fg] (0,0) rectangle (\metropolis@progressinheadfoot, 5pt);
+    \end{tikzpicture}%
+  \end{beamercolorbox}
+}
+\setbeamertemplate{progress bar in section page}{
+  \setlength{\metropolis@progressonsectionpage}{%
+    \textwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}%
+  }%
+  \begin{tikzpicture}
+    \draw[bg, fill=bg] (0,0) rectangle (\textwidth, 5pt);
+    \draw[fg, fill=fg] (0,0) rectangle (\metropolis@progressonsectionpage, 5pt);
+  \end{tikzpicture}%
+}
+\makeatother
+
+% Remove "Figure" in figure captions
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
