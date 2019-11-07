@@ -1,0 +1,62 @@
+\ProvidesPackage{poster}
+
+%%%%%%%%%%%%%% PACKAGES
+
+\usepackage{graphicx} % cf. images
+\usepackage{booktabs} % cf. better tables
+\usepackage{caption} % cf. captions
+\usepackage{comment} % cf. comment multiple lines
+\usepackage[T1]{fontenc} % Fonts
+%\usepackage{lmodern} % Latin Modern fonts (change to Linux Libertine \usepackage{libertine})
+\usepackage{libertine}
+
+%%%%%%%%%%%%%% COLOUR
+
+%\usecolortheme{gemini}
+
+% Main colour
+\definecolor{maincolour}{RGB}{4, 98, 145} % navy blue
+
+% Background colour of the header
+\definecolor{bghead}{RGB}{86, 180, 233} % light blue
+
+% Extra colour (e.g. background of alertblock)
+\definecolor{lightgray}{RGB}{240, 240, 240}
+
+% {RGB}{213, 94, 0} % orange/vermillon
+% {RGB}{174, 79, 40} % red / brown
+% {RGB}{198, 130, 80} % light brown
+
+% Basic colors
+\setbeamercolor{palette primary}{fg=black,bg=white}
+\setbeamercolor{palette secondary}{fg=black,bg=white}
+\setbeamercolor{palette tertiary}{bg=black,fg=white}
+\setbeamercolor{palette quaternary}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=maincolour}
+
+% Headline
+\setbeamercolor{headline}{fg=black,bg=bghead} % or white background
+\setbeamercolor{headline rule}{bg=black}
+
+% Block
+\setbeamercolor{block title}{fg=maincolour,bg=white}
+\setbeamercolor{block separator}{bg=black}
+\setbeamercolor{block body}{fg=black,bg=white}
+
+% Alert Block
+\setbeamercolor{block alerted title}{fg=maincolour,bg=lightgray}
+\setbeamercolor{block alerted separator}{bg=black}
+\setbeamercolor{block alerted body}{fg=black,bg=lightgray}
+
+% Heading
+\setbeamercolor{heading}{fg=black}
+
+% Itemize
+\setbeamercolor{item}{fg=maincolour}
+
+% Bibliography
+\setbeamercolor{bibliography item}{fg=black}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry location}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black}
