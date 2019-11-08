@@ -1,0 +1,46 @@
+\documentclass[a4paper, english, abstracton, 12pt]{scrartcl}
+
+\usepackage{report}
+
+\title{A great title}
+\author{Guillem HURAULT}
+\date{\today}
+
+\begin{document}
+\begin{spacing}{1.1}
+\setlength{\parskip}{12pt}
+
+\maketitle
+
+% Table of contents
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\pagebreak
+
+% Introduction
+% \include{introduction}
+\section{Introduction}
+
+Hello
+
+% Appendix
+\clearpage
+\appendix
+\addcontentsline{toc}{section}{Appendix}
+\appendixpage
+% \input{}
+
+\section{Something}
+
+An appendix
+
+% Bibliography
+\clearpage
+\bibliographystyle{ieeetr}
+\addcontentsline{toc}{section}{References}
+\small
+% \bibliography{}
+
+\end{spacing}
+\end{document}

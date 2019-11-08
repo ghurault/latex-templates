@@ -1,0 +1,79 @@
+\ProvidesPackage{report}
+
+% Section's font
+\setkomafont{disposition}{\normalfont\bfseries}
+
+% Margins
+\usepackage[top=2.5cm,bottom=2.5cm,left=2cm,right=2cm]{geometry}
+
+% Languages
+\usepackage[english]{babel}
+
+% Fonts
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{fontspec}
+\usepackage{libertine} % Linux Libertine font
+
+% Maths
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Figures
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{{./img/}} % Images path
+
+% Colors
+\usepackage{xcolor}
+
+% References
+\usepackage{cite}
+
+% Hyperlinks
+\usepackage[linktocpage=true,colorlinks=true,citecolor=teal]{hyperref}
+
+% Interlignes
+\usepackage{setspace}
+\usepackage{enumitem} % For list
+
+% Appendix
+\usepackage{appendix}
+
+% Page # of ##
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+% Comment multiples lines
+\usepackage{comment}
+
+% Insert pdf document
+\usepackage{pdfpages}
+
+% Wrapping text around figures
+\usepackage{wrapfig}
+
+% Copy Code in a latex document
+\usepackage{listings}
+
+% Table
+\usepackage{multirow}
+\usepackage{booktabs}
+
+%%%%% NEW COMMANDS
+
+% Horizontal lines (change thickness)
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+% Title
+\makeatletter
+\renewcommand{\maketitle}{
+\begin{center}
+\textsc{\Large \bfseries \@title }\par
+\@author -- \@date \par
+\end{center}
+\HRule}
+\makeatother
