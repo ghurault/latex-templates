@@ -1,8 +1,5 @@
 \ProvidesPackage{report}
 
-% Section's font
-\setkomafont{disposition}{\normalfont\bfseries}
-
 % Margins
 \usepackage[top=2.5cm,bottom=2.5cm,left=2cm,right=2cm]{geometry}
 
@@ -11,30 +8,39 @@
 
 % Fonts
 \usepackage[T1]{fontenc}
-%\usepackage[utf8x]{inputenc}
-\usepackage{fontspec}
 \usepackage{libertine} % Linux Libertine font
+
+% Spacing
+\usepackage{setspace}
+\onehalfspacing % Line spacing
+\setlength{\parskip}{12pt} % Paragraph spacing
+\usepackage{enumitem} % For list (itemize, enumerate)
 
 % Maths
 \usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bbm}
 
 % Figures
 \usepackage{graphicx}
 \usepackage{subcaption}
 \graphicspath{{./img/}} % Images path
 
-% Colors
+% Tables
+\usepackage{multirow}
+\usepackage{booktabs}
+
+% Colours
 \usepackage[dvipsnames]{xcolor}
 
-% References
-\usepackage{cite}
-
 % Hyperlinks
-\usepackage[linktocpage=true,colorlinks=true,citecolor=teal,linkcolor=BrickRed]{hyperref}
+\usepackage[hyphens]{url}
+\urlstyle{same}
+\usepackage[linktocpage=true, colorlinks=true, citecolor=teal, linkcolor=BrickRed, urlcolor=blue, breaklinks=true]{hyperref}
 
-% Interlignes
-\usepackage{setspace}
-\usepackage{enumitem} % For list
+% References
+\usepackage[style=ieee, url=false, dashed=false]{biblatex} % tldr, better than BibTeX
+\addbibresource{references.bib} % Bibliography file
+\usepackage{csquotes}
 
 % Appendix
 \usepackage{appendix}
@@ -47,21 +53,13 @@
 \renewcommand{\headrulewidth}{0pt}
 \cfoot{\thepage\ of \pageref{LastPage}}
 
-% Comment multiples lines
-\usepackage{comment}
-
-% Insert pdf document
-\usepackage{pdfpages}
-
-% Wrapping text around figures
-\usepackage{wrapfig}
-
-% Copy Code in a latex document
-\usepackage{listings}
-
-% Table
-\usepackage{multirow}
-\usepackage{booktabs}
+% Misc
+\usepackage{listings} % Copy Code in a latex document
+\usepackage{microtype} % Improve typesetting (+ fewer bad boxes problems)
+\usepackage{titling} % Provides macros \thetitle, \theauthor and \thedate to be used anywhere in the document
+\usepackage{comment} % Comment multiples lines
+% \usepackage{pdfpages} % Insert pdf document
+% \usepackage{wrapfig} % % Wrapping text around figures
 
 %%%%% NEW COMMANDS
 

@@ -2,12 +2,26 @@
 
 %%%%%%%%%%%%%% PACKAGES
 
+% Fonts
+\usepackage[T1]{fontenc} % Fonts
+\usepackage{libertine} % Linux Libertine font
+
+% Figures and Tables
 \usepackage{graphicx} % cf. images
 \usepackage{booktabs} % cf. better tables
 \usepackage{caption} % cf. captions
+
+% Maths
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Misc
 \usepackage{comment} % cf. comment multiple lines
-\usepackage[T1]{fontenc} % Fonts
-\usepackage{libertine} % Linux Libertine font
+\usepackage{microtype} % Improve typesetting (+ fewer bad boxes problems)
+
+% References
+\usepackage[style=ieee, url=false, dashed=false]{biblatex} % tldr, better than BibTeX
+\addbibresource{references.bib} % Bibliography file
+\usepackage{csquotes}
 
 %%%%%%%%%%%%%% COLOUR
 

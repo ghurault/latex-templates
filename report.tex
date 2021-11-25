@@ -1,4 +1,5 @@
 \documentclass[a4paper, english, abstracton, 12pt]{scrartcl}
+\setkomafont{disposition}{\normalfont\bfseries} % Section's font
 
 \usepackage{report}
 
@@ -7,8 +8,6 @@
 \date{\today}
 
 \begin{document}
-\begin{spacing}{1.1}
-\setlength{\parskip}{12pt}
 
 \maketitle
 
@@ -22,7 +21,9 @@
 % \include{introduction}
 \section{Introduction}
 
-Hello
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat orci sit amet aliquet ullamcorper. Phasellus nisi diam, fringilla quis lorem at, pellentesque vestibulum eros. Curabitur non dui id turpis blandit bibendum. Vestibulum nec velit in ante iaculis interdum in quis leo. Vivamus varius consequat congue. Duis sed eros mattis justo pharetra tincidunt non et erat. Nunc nec mauris et erat rhoncus consequat vitae vel sapien. Quisque suscipit metus sit amet diam posuere, in imperdiet eros elementum.
+
+\cite{Shmueli2010}
 
 % Appendix
 \clearpage
@@ -37,10 +38,7 @@ An appendix
 
 % Bibliography
 \clearpage
-\bibliographystyle{ieeetr}
-\addcontentsline{toc}{section}{References}
 \small
-% \bibliography{}
+\printbibliography[heading=bibintoc, title={References}]
 
-\end{spacing}
 \end{document}
