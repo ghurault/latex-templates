@@ -19,7 +19,8 @@
 \usepackage{microtype} % Improve typesetting (+ fewer bad boxes problems)
 
 % References
-\usepackage[style=ieee, url=false, dashed=false]{biblatex} % tldr, better than BibTeX
+\usepackage[style=ieee, url=false, isbn=false, dashed=false]{biblatex} % tldr, better than BibTeX
+\renewcommand*{\bibfont}{\footnotesize} % Change bibliography fontsize
 \addbibresource{references.bib} % Bibliography file
 \usepackage{csquotes}
 
